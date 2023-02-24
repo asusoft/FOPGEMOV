@@ -5,20 +5,25 @@ error_reporting(E_ALL);
 ?>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $to = "asusoft19a@gmail.com"; // Replace with your email address
-  $subject = "New message from contact form";
-  $name = $_POST['first-name'] . " " . $_POST['last-name'];
-  $email = $_POST['email'];
-  $message = $_POST['message'];
-  $headers = "From: " . $name . " <" . $email . ">\r\n";
-  $headers .= "Reply-To: " . $email . "\r\n";
-  $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+$to = "you@example.com";
 
-  if (mail($to, $subject, $message, $headers)) {
-    echo "Message sent successfully.";
-  } else {
-    echo "Sorry, there was an error sending your message. Please try again later.";
-  }
+// Email subject
+$subject = "Test email";
+
+// Email message
+$message = "This is a test email.";
+
+// Email headers
+$headers = "From: sender@example.com\r\n";
+$headers .= "Reply-To: sender@example.com\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+// Send the email
+mail($to, $subject, $message, $headers);
+
+if (mail($to, $subject, $message, $headers)) {
+  echo "Message sent successfully.";
+} else {
+  echo "Sorry, there was an error sending your message. Please try again later.";
 }
 ?>
