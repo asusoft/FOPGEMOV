@@ -4,9 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
-
         <title>FOPGEMOV</title>
 
         <!-- CSS FILES -->        
@@ -80,19 +77,19 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
+                            <a class="nav-link click-scroll" href="#about">About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Causes</a>
+                            <a class="nav-link click-scroll" href="#causes">Causes</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Contact</a>
+                            <a class="nav-link click-scroll" href="#contact">Contact</a>
                         </li>
 
                         <li class="nav-item ms-3">
-                            <a class="nav-link custom-btn custom-border-btn btn click-scroll" href="#section_5">Donate</a>
+                            <a class="nav-link custom-btn custom-border-btn btn click-scroll" href="#donate">Donate</a>
                         </li>
                     </ul>
                 </div>
@@ -237,7 +234,7 @@
                 </div>
             </section>
 
-            <section class="section-padding section-bg" id="section_2">
+            <section class="section-padding section-bg" id="about">
                 <div class="container">
                     <div class="row">
 
@@ -326,14 +323,14 @@
                         </div>
 
                         <div class="col-lg-5 col-12">
-                            <a href="#section_4" class="custom-btn btn click-scroll smoothscroll">Become a volunteer</a>
+                            <a href="#donate" class="nav-link custom-btn btn click-scroll smoothscroll">Become a volunteer</a>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <section class="section-padding" id="section_3">
+            <section class="section-padding" id="causes">
                 <div class="container">
                     <div class="row">
 
@@ -356,7 +353,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#section_5 " class="custom-btn btn click-scroll">Donate now</a>
+                                    <a href="#donate " class="custom-btn btn click-scroll">Donate now</a>
                                 </div>
                             </div>
                         </div>
@@ -376,7 +373,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#section_5" class="custom-btn btn click-scroll">Donate now</a>
+                                    <a href="#donate" class="custom-btn btn click-scroll">Donate now</a>
                                 </div>
                             </div>
                         </div>
@@ -396,7 +393,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#section_5" class="custom-btn btn click-scroll">Donate now</a>
+                                    <a href="#donate" class="custom-btn btn click-scroll">Donate now</a>
                                 </div>
                             </div>
                         </div>
@@ -420,7 +417,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#section_5" class="custom-btn btn click-scroll">Donate now</a>
+                                    <a href="#donate" class="custom-btn btn click-scroll">Donate now</a>
                                 </div>
                             </div>
                         </div>
@@ -440,7 +437,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#section_5" class="custom-btn btn click-scroll">Donate now</a>
+                                    <a href="#donate" class="custom-btn btn click-scroll">Donate now</a>
                                 </div>
                             </div>
                         </div>
@@ -460,7 +457,7 @@
                                         </div>
                                     </div>
 
-                                    <a href="#section_5" class="custom-btn btn click-scroll">Donate now</a>
+                                    <a href="#donate" class="custom-btn btn click-scroll">Donate now</a>
                                 </div>
                             </div>
                         </div>
@@ -470,7 +467,7 @@
 
             
 
-            <section class="volunteer-section section-padding" id="section_5">
+            <section class="volunteer-section section-padding" id="donate">
                 <div class="container">
                     <div class="row">
 
@@ -493,7 +490,8 @@
                                 <div class="d-flex align-items-center my-2">
                                     <p class="mb-0">
                                         <strong>Account Number:</strong>
-                                        1225346665
+                                        <span id="account-number">1225346665</span>
+                                        <i onclick="copyToClipboard()" class="bi bi-clipboard"></i>
                                     </p>
                                 </div>
                                 <div class="d-flex align-items-center my-2">
@@ -523,7 +521,7 @@
                 </div>
             </section>
 
-            <section class="contact-section section-padding" id="section_4">
+            <section class="contact-section section-padding" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
@@ -680,6 +678,28 @@
         <script src="js/click-scroll.js"></script>
         <script src="js/counter.js"></script>
         <script src="js/custom.js"></script>
+        <script>
+            function copyToClipboard() {
+              /* Get the text from the account number element */
+              const accountNumber = document.getElementById("account-number").innerText;
+              
+              /* Create a temporary input element and set its value to the account number */
+              const tempInput = document.createElement("input");
+              tempInput.value = accountNumber;
+              
+              /* Append the input element to the document */
+              document.body.appendChild(tempInput);
+              
+              /* Select the text in the input element */
+              tempInput.select();
+              
+              /* Copy the selected text to the clipboard */
+              document.execCommand("copy");
+              
+              /* Remove the temporary input element */
+              document.body.removeChild(tempInput);
+            }
+            </script>
 
     </body>
 </html>
